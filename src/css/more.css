@@ -1,0 +1,89 @@
+#more{
+    width: 90%;
+    margin: .1rem auto;
+}
+
+.more_title{
+    width: 100%;
+    margin: 0.2rem auto;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+/* todo加固定定位 */
+.isFixed{
+    width: 90%;
+    position: fixed;
+    top: 0.4rem;
+    background-color: white;
+    padding: 0.1rem 0;
+}
+.more_title li{
+    width: 25%;
+    height: 0.2rem;
+    line-height: 0.2rem;
+    font-size: 0.14rem;
+    text-align: center;
+    color: rgb(128, 128, 128);
+}
+.more_title li:nth-of-type(1),.more_title li:nth-of-type(2){
+    background: url(../assets/下拉grey.png) no-repeat 100% 0;
+    background-size: 0.12rem;
+}
+.more_title .pink_{
+    color: #ff195c;
+}
+
+
+#list{
+    width: 100%;
+}
+#list li{
+    width: 100%;
+    margin-bottom: 0.2rem;
+    display: flex;
+}
+#list li>img{
+    width: 30%;
+    border-radius: 0.05rem;
+    margin-left: 0.01rem;
+    margin-right: 0.1rem;
+}
+#list li>div{
+    width: 69%;
+    display: flex;
+    flex-direction: column;
+}
+#list li>div>h4{
+    width: 100%;
+    color: black;
+    line-height: 0.22rem;
+}
+#list li>div>p{
+    width: 100%;
+    color: #b3b3b3;
+    font-size: 0.13rem;
+    margin: 0.05rem 0;
+}
+#list li>div>span{
+    width: 100%;
+    color: #ccc;
+    font-size: 0.13rem;
+}
+#list li>div>a{
+    margin-top: 0.4rem;
+    font-size: .1rem;
+    color: #b3b3b3;
+}
+#list li>div>a>span{
+    display: inline-block;
+    margin-right: 0.02rem;
+    font-size: 0.16rem;
+    color: #ff195c;
+}
+
+
+
+
+
+

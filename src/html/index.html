@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>我的大麦</title>
+    <link rel="shortcut icon" href="//img.alicdn.com/tfs/TB1RxAHSmrqK1RjSZK9XXXyypXa-16-16.ico" type="image/x-icon">
+    <!-- 轮播图 -->
+    <link rel="stylesheet" href="../css/swiper-bundle.min.css">
+    <!-- 去掉默认样式 -->
+    <link rel="stylesheet" href="../css/reset.css">
+    <!-- 头部样式 -->
+    <link rel="stylesheet" href="../css/head.css">
+    <!-- 导航样式 -->
+    <link rel="stylesheet" href="../css/daohang.css">
+    <!-- 近期演出的样式 -->
+    <link rel="stylesheet" href="../css/recent.css">
+    <!-- 近期演出的样式 -->
+    <link rel="stylesheet" href="../css/more.css">
+
+    <!-- 自动设置字体大小 -->
+    <script src="../js/fontsize.js"></script>
+    <script src="../js/vue.js"></script>
+    <script src="../js/axios.min.js"></script>
+    <!-- 轮播图 -->
+    <script src="../js/swiper-bundle.min.js"></script>
+</head>
+
+<body>
+    <!-- todo 头部 -->
+    <header>
+        <p>全国</p>
+        <div>
+            <img src="../assets/search.png" alt="">
+            <input type="text" placeholder="搜索明星、演出比赛、场馆">
+        </div>
+        <img src="../assets/person.png" alt="">
+    </header>
+    <!--todo 导航栏 -->
+    <ul id="nav">
+        <li v-for="(item,index) in lis">
+            <img :src="pic_url[index]" alt="">
+            <p>{{item}}</p>
+        </li>
+    </ul>
+    <!-- todo 近期演出 -->
+    <!-- 大标题+日历 -->
+    <div id="app">
+        <!-- 近期标题 -->
+        <div class="recent">
+            <h3>近期演出</h3>
+            <p>日历</p>
+        </div>
+        <!-- 日期列表 -->
+        <ul id="zhou">
+            <li v-for="(item,index) in zhou">
+                {{item}}
+            </li>
+        </ul>
+        <!-- swiper -->
+        <div class="swiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide" v-for="(item,index) in num">
+                    <img :src="pic_url[index]">
+                    <p>{{title_p[index]}}</p>
+                    <div>
+                    <a>￥{{price[index]}}</a>
+                    <span>起</span>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+    <!-- todo 更多演出 -->
+    <div id="more">
+        <!-- 更多标题 -->
+        <div class="recent">
+            <h3>更多演出</h3>
+        </div>
+        <ul class="more_title" :class="isFixed == true ? 'isFixed' :''">
+            <li>全部分类</li>
+            <li>全部时间</li>
+            <li class="pink_">推荐排序</li>
+            <li>距离最近</li>
+        </ul>
+        <ul id="list">
+            <li v-for="(item,index) in price" class="jump" @click="go_buy">
+                <img :src="pic_url[index]" alt="">
+                <div>
+                    <h4>{{title_p[index]}}</h4>
+                    <p>{{time[index]}}</p>
+                    <span>{{address[index]}}</span>
+                    <a><span>￥{{item}}</span>起</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+</body>
+<!-- 引入导航 -->
+<script src="../js/daohang.js"></script>
+<!-- 引入近期演出 -->
+<script src="../js/recent.js"></script>
+<!-- swiper -->
+<script src="../js/swiper.js"></script>
+<!-- 更多演出 -->
+<script src="../js/more.js"></script>
+</html>

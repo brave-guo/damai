@@ -1,0 +1,21 @@
+#nav{
+    width: 90%;
+    margin: 0.2rem auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+#nav li{
+    width: 0.75rem;
+    height: 0.7rem;
+    line-height: 0.2rem;
+    text-align: center;
+}
+#nav p{
+    width: 0.75rem;
+    font-size: 0.13rem;
+}
+
+#nav img{
+    width: 0.33rem;
+}

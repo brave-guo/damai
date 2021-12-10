@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>我的商品详情</title>
+    <link rel="shortcut icon" href="//img.alicdn.com/tfs/TB1RxAHSmrqK1RjSZK9XXXyypXa-16-16.ico" type="image/x-icon">
+    <!-- 去掉默认样式 -->
+    <link rel="stylesheet" href="../css/reset.css">
+    <!-- 头部样式 -->
+    <link rel="stylesheet" href="../css/buy1.css">
+    <!-- 导航样式 -->
+    <!-- <link rel="stylesheet" href="../css/daohang.css"> -->
+    <!-- 近期演出的样式 -->
+    <!-- <link rel="stylesheet" href="../css/recent.css"> -->
+    <!-- 近期演出的样式 -->
+    <!-- <link rel="stylesheet" href="../css/more.css"> -->
+
+    <!-- 自动设置字体大小 -->
+    <script src="../js/fontsize.js"></script>
+    <script src="../js/vue.js"></script>
+    <script src="../js/axios.min.js"></script>
+</head>
+
+<body>
+    <div id="buy">
+        <!-- 黑色背景 -->
+        <div class="black">
+            <!-- 大标题 -->
+            <div class="large">
+                <img src="../assets/lb1.jpg">
+                <div>
+                    <h2>【广州】重塑雕像的权利【喝彩之后】2021广州专场</h2>
+                    <span>总票代</span>
+                    <p>
+                        ￥<span>380</span>
+                        -￥<span>980</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <!-- 时间 -->
+        <div class="time" @click="show">
+            <div>2021.12.31 周五 19:50</div>
+            <p>约120分钟（以现场为准）</p>
+        </div>
+        <!-- 时间点击的蒙版 -->
+        <div class="mengban" v-show="isShow">
+            <div class="grey"></div>
+            <div class="white">
+                <img src="../assets/关闭.png" @click="no_show">
+                <p class="grey_title">场次
+                    <span>场次时间均为演出当地时间</span>
+                </p>
+                <div class="grey_time">
+                    2021-12-31 周五 19:50
+                    <span>预售</span>
+                </div>
+                <p class="grey_title">票档</p>
+                <div class="grey_price">
+                    看台380元<span>缺货登记</span>
+                </div>
+                <div class="two">
+                    <div class="grey_price spe">
+                        看台580元<span>缺货登记</span>
+                    </div>
+                    <div class="grey_price have">看台780元</div>
+                </div>
+                <div class="grey_price">
+                    内场980元<span>缺货登记</span>
+                </div>
+                <p class="youhui">
+                    <span>惠</span>
+                    <a href="#">优惠说明</a>
+                </p>
+                <div class="grey_last">
+                    请选择票档
+                    <span @click="no_show">确定</span>
+                </div>
+            </div>
+        </div>
+        <!-- 地址定位 -->
+        <div class="address">
+            <div class="add_left">
+                <h4>广州市|广州体育馆</h4>
+                <span>广州市白云大道南783号</span>
+                <p>无座位图</p>
+            </div>
+            <div class="add_right">
+                <img src="../assets/position.png" alt="">
+                <span>地图</span>
+            </div>
+        </div>
+        <!-- 服务说明 -->
+        <div class="serve">
+            <p>服务
+                <img src="../assets/pink_close.png" alt="">重要通知
+                <img src="../assets/pink_close.png" alt="">不支持退
+                <img src="../assets/bule_dui.png" alt="">实名制观演
+                <img src="../assets/pink_close.png" alt="">不支持选座
+            </p>
+            <span>预售：本商品为预售商品，正式开票后将第一时间为您配票</span>
+        </div>
+
+        <div class="out">
+            <!-- 想看人数 -->
+            <div class="want">
+                <p>
+                    <span>想看人数</span>
+                    <a>超过79%同类演出</a>
+                </p>
+                <div>
+                    <p>3533</p>
+                    <span>人</span>
+                    <div>
+                        <img src="../assets/tou5.jpg" alt="">
+                        <img src="../assets/tou2.jpg" alt="">
+                        <img src="../assets/tou3.jpg" alt="">
+                        <img src="../assets/tou2.jpg" alt="">
+                        <img src="../assets/tou1.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+            <!-- 温馨提示 -->
+            <div class="tishi">
+                <img src="../assets/tishi.jpg" alt="">
+            </div>
+            <!-- 详情须知标题 -->
+            <ul class="detail">
+                <li>
+                    <p>详情</p>
+                    <div></div>
+                </li>
+                <li>
+                    <p>须知</p>
+                    <div></div>
+                </li>
+                <li>
+                    <p>推荐</p>
+                    <div></div>
+                </li>
+            </ul>
+            <!-- 详情 -->
+            <div class="yanchu" :class="{over:bool}">   
+                <h3>演职人员</h3>
+                <div class="tou">
+                    <img src="../assets/chongsu.jpg" alt="">
+                    <div>
+                        <img src="../assets/chongsuV.png" alt="">
+                        歌手
+                    </div>
+                </div>
+                <div class="over">
+                    <p>重塑雕像的权利</p>
+                    <span>当下中国最具代表性以及国际影响力的摇滚乐队之一。2005年发行首张EP《Cut Off!》，作为一支独立乐队，迅速赢得巨量乐迷和绝佳口碑；2009年发行备受好评的全长专辑《Watch out! Climate Has Changed, Fat Mum Rises...》，一举奠定了在国内新音乐领域的领军地位；2017年全球发行专辑《Before The Applause》并于欧美同步推广，英国重量级音乐杂志《Q》给出高分评价并对乐队做出长篇报道。乐队更在随后担任世界殿堂级摇滚乐队Depeche Mode欧洲巡演嘉宾，登上11个万人场馆的舞台，创造中国摇滚史纪录。</span>
+                </div>
+                <h3>演出介绍</h3>
+                <p class="title_s">
+                    防疫须知
+                </p>
+                <p class="content_s">
+                    为切实保障活动安全，2021重塑雕像的权利演唱会将严格按照活动属地卫生健康局与公安部门的有关要求，进一步加强疫情防控与安全防范工作。
+                </p>
+                <p class="title_s">
+                    请您认真阅读以下防疫信息:
+                </p>
+                <p class="content_s">
+                    1. 所有入场人员（含全体观众、艺人及所有工作人员）均需持有入场前<br>72小时内的有效核酸检测阴性报告。<br>【应疾控部门要求，综合考虑预防感染、阻断疾病传播的能力等因素，已接种新冠疫苗者仍需要遵循出示72小时内有效核酸检测的要求】。<br>2. 活动前14天（12月17日起计算）未到过国内中高风险区的观众，<br>入场时核查防疫行程卡，确定“防疫行程卡”和“粤康码”绿码无异常（截图无效），经体温检测正常）小于37.2℃）并佩戴口罩方可进入活动区域。<br>3. 建议入场人员（含全体观众、艺人及所有工作人员）除有接种禁忌症外应按要求接种新冠病毒疫苗。<br><br>现场健康证明均需刷身份证进行识别，请务必携带且保管好个人身份证件。<br>电子身份证不能进行查验。<br><br>如无法正常提供以上健康证明:<br>粤康码绿码、行程卡正常、72小时核酸检测报告<br>您将无法入场，切勿购票及冒然前往活动场地!<br>
+                </p>
+                <p class="title_s">
+                    不得入场情形如下:
+                </p>
+                <p class="content_s">
+                    1.粤康码显示异常（红码、黄码）<br>2.活动14天内（12月17日起计算）国内中高风险地区来穗人员<br>3.红外体温检测异常（体温≥37.2℃）
+                </p>
+                <img src="../assets/yiqingmap.jpg" alt="">
+            </div>
+        </div>
+        <div class="opc_box" v-show="condition">
+            <div class="opc"></div>
+            <p @click="over">展开更多</p>
+        </div>
+        <!-- 固定foot栏 -->
+        <div class="foot"> 
+            <div class="little_foot" @click="go_index">
+                <img src="https://gw.alicdn.com/tfs/TB1L5guiKT2gK0jSZFvXXXnFXXa-64-64.svg" alt="">
+                <span>大麦首页</span>
+            </div>
+            <div class="little_foot">
+                <img src="https://gw.alicdn.com/tfs/TB1K4omiUz1gK0jSZLeXXb9kVXa-64-64.svg" alt="">
+                <span>想看</span>
+            </div>
+            <div class="little_foot">
+                <img src="https://gw.alicdn.com/tfs/TB1SDZviUD1gK0jSZFGXXbd3FXa-64-64.svg" alt="">
+                <span>我的订单</span>
+            </div>
+            <div class="button">立即预订</div>
+        </div>
+    </div>
+</body>
+
+<script src="../js/buy1.js"></script>
+
+</html>

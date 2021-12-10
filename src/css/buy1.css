@@ -1,0 +1,513 @@
+#buy{
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+.black{
+    width: 100%;
+    height: 1rem;
+    background-color: rgb(44, 41, 47);
+    position: absolute;
+    top: 0;
+    z-index: 1;
+}
+
+/* 大标题 */
+.large{
+    width: 100%;
+    height: 1.7rem;
+    margin-top: 0.15rem;
+    background-color: white;
+    display: flex;
+    padding: 0.15rem;
+    box-sizing: border-box;
+    border-radius: 0.15rem 0.15rem 0 0 ;
+}
+.large>img{
+    width: 1rem;
+    border-radius: 0.05rem;
+}
+.large>div{
+    margin-left: 0.1rem;
+    display: flex;
+    flex-direction: column;
+}
+.large>div>h2{
+    font-size: 0.18rem;
+    line-height: 0.22rem;
+    margin-bottom: 0.05rem;
+}
+.large>div>span{
+    width: 0.4rem;
+    color: rgb(255,143,63);
+    text-align: center;
+    border: 1px solid rgb(255,143,63);
+    font-size: 0.1rem;
+}
+.large>div>p{
+    margin-top: 0.6rem;
+    color: #ff195c;
+    font-size: 0.12rem;
+}
+.large>div>p>span{
+    color: #ff195c;
+    font-size: 0.16rem;
+    font-weight: 500;
+}
+
+/* 时间 */
+.time{
+    margin: 1.7rem 0.15rem 0 0.15rem;
+    width: 92%;
+    padding: 0.15rem 0;
+    border-bottom: 1px  solid rgb(233, 233, 233);
+    box-sizing: border-box;
+    background: url(../assets/右右.png) no-repeat 100% 50%;
+    background-size: 0.1rem;
+}
+.time div{
+    font-weight: bold;
+    font-size: 0.15rem;
+    margin-bottom: 0.05rem;
+}
+.time p{
+    color: rgb(136, 136, 136);
+    font-size: 0.12rem;
+}
+
+/* todo 时间点击的蒙版 */
+.mengban{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 99;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.mengban>.grey{
+    width: 100%;
+    background-color: rgba(70, 68, 68, 0.616);
+    flex: 1;
+}
+.mengban>.white{
+    width: 100%;
+    background-color: white;
+    position: relative;
+    border-radius: 0.15rem;
+    margin-top: -0.5rem;
+    padding-top: 0.2rem;
+    box-sizing: border-box;
+}
+.white>img{
+    position: absolute;
+    width: 0.1rem;
+    padding: 0.1rem 0.15rem;
+    top: 0.1rem;
+    right:  0.1rem;
+}
+.white>p,.white>div{
+    /* width: 100%; */
+    margin: 0 0.2rem;
+    box-sizing: border-box;
+}
+.white>.grey_title{
+    color: black;
+    margin-top: 0.2rem;
+}
+.grey_title>span{
+    font-size: 0.12rem;
+    color: rgb(121, 120, 120);
+}
+.white>.grey_time{
+    width: 2.2rem;
+    margin: 0.2rem 0.2rem;
+    padding: 0.1rem 0 0.1rem 0.1rem;
+    border: 1px solid rgb(95, 94, 94);
+    border-radius: 0.08rem;
+    font-size: 0.14rem;
+    color: black;
+}
+.white>.grey_time>span{
+    font-size: 0.1rem;
+    border: 1px solid rgb(126, 126, 126);
+    border-radius: 0.08rem;
+    color: rgb(126, 126, 126);
+    padding: 0.02rem 0.03rem;
+    display: inline-block;
+    margin-left: 0.15rem;
+}
+.white .grey_price{
+    width: 1.6rem;
+    margin-top: 0.2rem;
+    padding: 0.1rem 0.1rem;
+    font-size: 0.14rem;
+    border: 1px solid #ccc;
+    border-radius: 0.05rem;
+    background-color: rgb(246,247,248);
+}
+.white .grey_price>span{
+    font-size: 0.1rem;
+    padding: 0.01rem 0.01rem;
+    margin-left: 0.15rem;
+    color: rgb(103, 135, 148);
+    border: 1px solid rgb(103, 135, 148);
+    border-radius: 0.05rem;
+}
+.white>.two>.spe{
+    width: 1.4rem;
+}
+.two{
+    display: flex;
+}
+.white .have{
+    width: 0.7rem;
+    margin-left: 0.2rem;
+}
+
+.white>.youhui{
+    margin: 1rem 0.2rem 0.2rem 0.2rem;
+    padding: 0.12rem;
+    font-size: 0.14rem;
+    line-height: 0.2rem;
+    border-radius: 0.07rem;
+    display: flex;
+    align-items: center;
+    background: url(../assets/右右o.png) no-repeat 95% 50%;
+    background-size: 0.15rem;
+    background-color: rgb(255,240,229);
+    box-shadow:1px 4px 12px 0px rgb(231, 231, 231);
+}
+.white>.youhui>span{
+    height: 0.15rem;
+    line-height: 0.15rem;
+    background-color: rgb(255,110,0);
+    color: white;
+    border-radius: 0.05rem;
+    font-size: 0.12rem;
+    padding: 0.02rem;
+    margin-right: 0.1rem;
+}
+.white>.youhui>a{
+    color: rgb(255,110,0);
+}
+.white>.grey_last{
+    margin: 0.1rem ;
+    font-size: 0.12rem;
+    color: rgb(163, 163, 163);
+    padding: 0.1rem 0.2rem 0.1rem 0.2rem;
+    border-top: 1px solid rgb(245, 245, 245);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+.white>.grey_last>span{
+    font-size: 0.16rem;
+    padding: 0.15rem 0.6rem;
+    background-color: rgb(255,54,147);
+    color: white;
+    border-radius: 0.3rem 0.3rem 0.3rem 0;
+}
+
+/* todo 位置 */
+.address{
+    width: 92%;
+    margin: 0 0.15rem;
+    padding: 0.2rem 0 0.15rem 0;
+    border-bottom: 1px  solid rgb(233, 233, 233);
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+}
+.add_left h4{
+    font-weight: bold;
+    font-size:0.15rem ;
+    margin-bottom: 0.05rem;
+}
+.add_left span{
+    font-size: 0.12rem;
+    color: rgb(163, 163, 163);
+}
+.add_left p{
+    width: 0.55rem;
+    text-align: center;
+    font-size: 0.12rem;
+    margin-top: 0.1rem;
+    color: #ff195c;
+    border: 1px solid #ff195c;
+    border-radius: 0.05rem;
+    padding: 0.02rem ;
+    box-sizing: border-box;
+}
+.add_right{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-right: 0.1rem;
+}
+
+.add_right img{
+    width: 0.25rem;
+}
+.add_right span{
+    font-size: 0.13rem;
+    color: rgb(129, 127, 127);
+    margin-top: 0.05rem;
+}
+
+/* todo 服务说明 */
+.serve{
+    width: 92%;
+    margin: 0 0.15rem;
+    padding: 0.2rem 0 0.15rem 0;
+    background: url(../assets/右右.png) no-repeat 100% 36%;
+    background-size: 0.12rem;
+}
+.serve>p{
+    font-size: 0.12rem;
+}
+.serve>p>img{
+    width: 0.1rem;
+    margin: 0 0.02rem 0 0.04rem;
+}
+.serve>span{
+    display: inline-block;
+    font-size: 0.12rem;
+    color: rgb(129, 127, 127);
+    margin-top: 0.08rem;
+}
+
+
+.out{
+    background-color: rgb(246,247,248);
+    overflow: hidden;
+}
+/* todo 想看人数 */
+.want{
+    width: 100%;
+    margin-top: 0.1rem;
+    padding: 0.2rem 00.15rem 0.15rem 0.15rem;
+    box-sizing: border-box;
+    background-color: white;
+}
+.want>p{
+    display: flex;
+    justify-content: space-between;
+}
+.want>p>span{
+    font-size: 0.15rem;
+    color: black;
+}
+.want>p>a{
+    font-size: 0.12rem;
+    color: rgb(129, 127, 127);
+}
+.want>div{
+    display: flex;
+    align-items: flex-end;
+    margin-top: 0.1rem;
+}
+.want>div>p{
+    font-size: 0.35rem;
+    color: rgb(255,143,63);
+}
+.want>div>span{
+    color: rgb(255,143,63);
+    font-size: 0.14rem;
+    margin: 0 0.7rem 0 0.05rem;
+}
+.want>div>div{
+    display: flex;
+}
+.want>div>div>img{
+    width: 0.2rem;
+    /* border: 1px solid white; */
+    border-radius: 50%;
+    margin-right: -0.36rem;
+}
+
+/* todo 温馨提示 */
+.tishi{
+    width: 100%;
+    margin-top: 0.1rem;
+    text-align: center;
+    background-color: white;
+}
+.tishi img{
+    width: 92%;
+}
+
+/* todo 详情须知标题 */
+.detail{
+    width: 100%;
+    background-color: white;
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: rem
+}
+.detail>li{
+    padding: 0.2rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.detail>li>p{
+    margin-bottom: 0.05rem;
+}
+.detail>li>div{
+    width: 0.2rem;
+    height: 0.02rem;
+    background-color: #ff195c;
+    border-radius: 0.05rem;
+}
+
+/* 详情 */
+.yanchu{
+    width: 100%;
+    height: 12.2rem;
+    background-color: white;
+    margin-bottom: 1.2rem;
+    padding:0 0.15rem;
+    box-sizing: border-box;
+    position: relative;
+    overflow: hidden;
+}
+.over{
+    overflow: auto;
+    margin-bottom: 0.5rem;
+}
+.yanchu>h3{
+    font-weight: bold;
+    font-size: 0.16rem;
+    color: black;
+    /* margin-left: .15rem; */
+    margin: 0.2rem 0;
+}
+.yanchu>.tou{
+    width: 1rem;
+    margin-left: 0.1rem;
+}
+.yanchu>.tou>img{
+    width: 0.7rem;
+    border-radius: 50%;
+}
+.yanchu>.tou>div{
+    width: 0.4rem;
+    padding: 0.03rem 0.05rem 0.03rem 0;
+    font-size: 0.12rem;
+    color: white;
+    border-radius: 0 0.1rem 0.1rem 0;
+    background-color: rgba(7, 7, 7, 0.705);
+    position: relative;
+    top: -0.17rem;
+    left: 0.15rem;
+    text-indent: 0.15rem;
+}
+.yanchu>.tou>div>img{
+    width: 0.17rem;
+    margin-left: -0.06rem;
+    position: absolute;
+    left: 0;
+    top: 0.01rem;
+}
+.yanchu>.over{
+    width: 0.8rem;
+    margin-bottom: 0.3rem;
+}
+.yanchu>.over>p{
+    width: 100%;
+    font-size: 0.15rem;
+    font-weight: bold;
+    margin-bottom: 0.05rem;
+    color: black;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    overflow: hidden;
+}
+.yanchu>.over>span{
+    width: 100%;
+    font-size: 0.12rem;
+    color: rgb(129, 127, 127);
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    overflow: hidden;
+}
+
+.yanchu>.title_s{
+    color: rgb(129, 127, 127);
+    font-size: 0.13rem;
+    font-weight: bold;
+    margin: 0.2rem 0;
+}
+.yanchu>.content_s{
+    color: rgb(161, 161, 161);
+    font-size: 0.13rem;
+    line-height: 0.26rem;
+    letter-spacing: 0.01rem;
+}
+.yanchu>img{
+    width: 100%;
+}
+
+.opc_box{
+    width: 100%;
+    margin-top: -1.1rem;
+    position: absolute;
+    bottom: 0.8rem;
+    text-align: center;
+}
+.opc_box .opc{
+    height: 1.1rem;
+    margin: 0 0.15rem;
+    box-sizing: border-box;
+    /* background-image:linear-gradient(rgba(248, 247, 247, 0.678),rgba(255, 255, 255, 0.582)) ; */
+    background: -webkit-gradient(linear,0 top,0 93.75%,from(hsla(0,0%,100%,0)),to(#fff));
+}
+.opc_box p{
+    height: 0.4rem;
+    line-height: 0.4rem;
+    text-align: center;
+    background-color: white;
+    color: rgb(97, 157, 247);
+}
+
+
+/* todo 固定foot栏 */
+.foot{
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    padding: 0.2rem 0;
+    display: flex;
+    justify-content: space-evenly;
+    background-color: white;
+}
+.foot>.little_foot{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.foot>.little_foot>img{
+    width: 0.22rem;
+    margin-bottom: 0.05rem;
+}
+.foot>.little_foot>span{
+    font-size: 0.12rem;
+}
+.foot>.button{
+    font-size: 0.16rem;
+    padding: 0.15rem 0.6rem;
+    background-color: rgb(255,54,147);
+    color: white;
+    border-radius: 0.3rem;
+}
+
+
+
