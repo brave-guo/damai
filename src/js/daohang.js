@@ -1,4 +1,4 @@
-let vm = new Vue({
+let am = new Vue({
     el:'#nav',
     data:{
         lis:['演唱会','话剧歌剧','音乐会','体育','曲苑杂坛','亲子','展览休闲','境外'],

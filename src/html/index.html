@@ -45,6 +45,32 @@
             <p>{{item}}</p>
         </li>
     </ul>
+
+    <!-- todo 抢票直播站 -->
+    <div class="qiang">
+        <img src="../assets/qiangpiao.png" alt="">
+        <div class="swiper column">
+            <div class="swiper-wrapper column_wrapper">
+                <div class="swiper-slide">
+                    <span>20.6万人围观</span>
+                    <a href="#">THE9广州</a>
+                </div>
+                <div class="swiper-slide">
+                    <span>4.4万人围观</span>
+                    <a href="#">五条人广州</a>
+                </div>
+                <div class="swiper-slide">
+                    <span>9580人围观</span>
+                    <a href="#">王晰“图景”新年音乐会</a>
+                </div>
+                <div class="swiper-slide">
+                    <span>6837人围观</span>
+                    <a href="#">Mailivex大船文化</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- todo 近期演出 -->
     <!-- 大标题+日历 -->
     <div id="app">
@@ -60,8 +86,8 @@
             </li>
         </ul>
         <!-- swiper -->
-        <div class="swiper">
-            <div class="swiper-wrapper">
+        <div class="swiper hor">
+            <div class="swiper-wrapper ">
                 <div class="swiper-slide" v-for="(item,index) in num">
                     <img :src="pic_url[index]">
                     <p>{{title_p[index]}}</p>

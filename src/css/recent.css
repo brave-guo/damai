@@ -11,6 +11,7 @@
 }
 .recent h3{
     font-size: 0.2rem;
+    color: black;
 }
 .recent p{
     font-size: 0.13rem;
@@ -78,4 +79,59 @@
 .swiper-slide span{
     font-size: .1rem;
     color: #b3b3b3;
+}
+
+.qiang{
+    width: 85%;
+    height: 0.4rem;
+    margin: 0 auto;
+    margin-bottom: 0.3rem;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    padding: 0.12rem 0.1rem;
+    box-sizing: border-box;
+    border: 1px solid rgb(245, 245, 245);
+    border-radius: 0.18rem;
+    box-shadow:1px 4px 15px 0px rgb(240, 234, 234);
+    background: url(../assets/右右.png) no-repeat 95% 50%;
+    background-size: 0.12rem;
+}
+.qiang>img{
+    margin-top: -0.01rem;
+}
+.qiang>.column{
+    width: 60%;
+    height: 100%;
+    margin-left: -0.03rem;
+}
+.qiang>.column>.column_wrapper{
+    width: 100%;
+    height: 100%;
+    text-align: right;
+}
+.column_wrapper>.swiper-slide{
+    width: 100% !important;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+.column_wrapper>.swiper-slide>span{
+    width: 0.8rem !important;
+    height: 100%;
+    color: #ff195c;
+    font-size: 0.13rem;
+
+    /* margin-left: 0.1rem; */
+}
+.column_wrapper>.swiper-slide>a{
+    width: 0.8rem;
+    height: 0.13rem;
+    font-size: 0.13rem;
+    color: #202020;
+    margin-left: -0.02rem;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    overflow: hidden;
 }
