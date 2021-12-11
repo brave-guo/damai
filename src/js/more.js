@@ -19,7 +19,7 @@ let more = new Vue({
             // var y = document.querySelector('.more_title');
             // console.log(document.querySelector('.more_title').screenY);
             // console.log(y);
-            if (scrollTop > 450) {
+            if (scrollTop > 500) {
                 this.searchBarFixed = true;
                 this.isFixed=true
             } else {
